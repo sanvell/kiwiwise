@@ -15,6 +15,7 @@ const navLinks = [
   { href: '/compare-funds', label: 'Compare Funds' },
   { href: '/calculators', label: 'Calculators' },
   { href: '/news', label: 'News & Insights' },
+  { href: '/kiwisaver-tool', label: 'KiwiSaver Tool' },
   { href: '/about', label: 'About Us' },
 ];
 
