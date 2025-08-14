@@ -16,6 +16,7 @@ const navLinks = [
   { href: '/calculators', label: 'Calculators' },
   { href: '/news', label: 'News & Insights' },
   { href: '/kiwisaver-tool', label: 'KiwiSaver Tool' },
+  { href: '/lifestage-kiwisaver', label: 'LifeStage KiwiSaver' },
   { href: '/about', label: 'About Us' },
 ];
 
@@ -48,7 +49,6 @@ export function Header() {
         </div>
 
 
-        {/* Mobile Navigation */}
         <div className="md:hidden">
           <Sheet open={isOpen} onOpenChange={setIsOpen}>
             <SheetTrigger asChild>
