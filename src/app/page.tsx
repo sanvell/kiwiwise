@@ -8,28 +8,28 @@ const featureCards = [
   {
     icon: <BookOpen className="h-8 w-8 text-primary" />,
     title: 'In-Depth Guides',
-    description: 'From investment basics to advanced strategies, our guides are here to help.',
+    description: 'From KiwiSaver basics to advanced strategies, our guides are here to help.',
     link: '/guides',
     linkText: 'Explore Guides',
   },
   {
     icon: <BarChart2 className="h-8 w-8 text-primary" />,
     title: 'Fund Comparison',
-    description: 'Compare investment funds side-by-side to find the perfect fit for you.',
+    description: 'Compare KiwiSaver funds side-by-side to find the perfect fit for you.',
     link: '/compare-funds',
     linkText: 'Compare Funds',
   },
   {
     icon: <Calculator className="h-8 w-8 text-primary" />,
     title: 'Financial Calculators',
-    description: 'Estimate your future balance, retirement savings, and more with our tools.',
+    description: 'Estimate your future KiwiSaver balance, retirement savings, and more.',
     link: '/calculators',
     linkText: 'Use Calculators',
   },
    {
     icon: <Newspaper className="h-8 w-8 text-primary" />,
     title: 'Latest News',
-    description: 'Stay informed with the latest updates on market performance.',
+    description: 'Stay informed with the latest updates on market performance and KiwiSaver changes.',
     link: '/news',
     linkText: 'Read News',
   },
@@ -37,20 +37,20 @@ const featureCards = [
 
 export default function Home() {
   return (
-    <div className="flex flex-col min-h-screen">
+    <div className="flex flex-col min-h-screen bg-background">
       <main className="flex-grow">
         {/* Hero Section */}
         <section className="relative py-20 md:py-32 bg-gradient-to-b from-background to-muted/50">
-           <div className="absolute inset-0 opacity-10 bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAzMiAzMiIgd2lkdGg9IjMyIiBoZWlnaHQ9IjMyIiBmaWxsPSJub25lIiBzdHJva2U9ImhzbCgyNDEsIDQ3JSwgNDIlKSI+PHBhdGggZD0iTTAgLjUgMzIgLjVtMCAxNiAwIC41IDMyIC41TTMyIDE2LjUgMCAxNi41TTguNSA1LjV2LTEybTcgNXYtMTJtNyA1di0xMm0tMTEgMjF2LTEybTcgNXYtMTJtNyA1di0xMiIvPjwvc3ZnPg==')_repeat_0_0] [mask-image:linear-gradient(to_bottom,white_10%,transparent_70%)]"></div>
+           <div className="absolute inset-0 opacity-10 bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAzMiAzMiIgd2lkdGg9IjMyIiBoZWlnaHQ9IjMyIiBmaWxsPSJub25lIiBzdHJva2U9ImhzbCgxNTIsIDYxJSwgNTglKSI+PHBhdGggZD0iTTAgLjUgMzIgLjVtMCAxNiAwIC41IDMyIC41TTMyIDE2LjUgMCAxNi41TTguNSA1LjV2LTEybTcgNXYtMTJtNyA1di0xMm0tMTEgMjF2LTEybTcgNXYtMTJtNyA1di0xMiIvPjwvc3ZnPg==')_repeat_0_0] [mask-image:linear-gradient(to_bottom,white_10%,transparent_70%)]"></div>
           <div className="container max-w-7xl mx-auto px-4 z-10 relative">
             <div className="grid md:grid-cols-2 gap-12 items-center">
               <div className="space-y-6 text-center md:text-left">
-                <p className="font-semibold text-primary animate-fade-in-up [animation-delay:200ms]">Welcome to ClearPath</p>
+                <p className="font-semibold text-primary animate-fade-in-up [animation-delay:200ms]">Welcome to KiwiWise</p>
                 <h1 className="text-4xl md:text-5xl lg:text-6xl font-headline font-bold text-foreground animate-fade-in-up [animation-delay:400ms]">
-                  Your Finances, <span className="text-primary">Smarter.</span>
+                  Your KiwiSaver, <span className="text-primary">Smarter.</span>
                 </h1>
                 <p className="text-lg text-muted-foreground max-w-xl mx-auto md:mx-0 animate-fade-in-up [animation-delay:600ms]">
-                  Navigate your financial journey with confidence. We provide the tools and insights you need to grow your wealth for a brighter future.
+                  Navigate your KiwiSaver journey with confidence. We provide the tools and insights you need to grow your wealth for a brighter future.
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4 justify-center md:justify-start pt-4 animate-fade-in-up [animation-delay:800ms]">
                   <Button asChild size="lg">
@@ -81,7 +81,7 @@ export default function Home() {
             <div className="text-center space-y-4 mb-12">
               <h2 className="text-3xl md:text-4xl font-headline font-bold">Everything you need in one place</h2>
               <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-                ClearPath offers a comprehensive suite of tools and resources to empower your financial decisions.
+                KiwiWise offers a comprehensive suite of tools and resources to empower your financial decisions.
               </p>
             </div>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">

@@ -8,7 +8,7 @@ import { Label } from "@/components/ui/label";
 import { Button } from "@/components/ui/button";
 import { Slider } from "@/components/ui/slider";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
-import { BarChart, PiggyBank, Home, Percent } from 'lucide-react';
+import { PiggyBank, Home, Percent, BarChart } from 'lucide-react';
 
 // A simple formatter for currency
 const currencyFormatter = new Intl.NumberFormat('en-NZ', {
@@ -42,8 +42,8 @@ function RetirementCalculator() {
   return (
     <Card>
       <CardHeader>
-        <CardTitle className="font-headline">Retirement Savings Estimator</CardTitle>
-        <CardDescription>Project your potential savings balance at retirement.</CardDescription>
+        <CardTitle className="font-headline">KiwiSaver Retirement Calculator</CardTitle>
+        <CardDescription>Project your potential KiwiSaver balance at retirement.</CardDescription>
       </CardHeader>
       <CardContent className="space-y-6">
          <div className="grid md:grid-cols-2 gap-6">
@@ -56,7 +56,7 @@ function RetirementCalculator() {
                 <Slider value={[retirementAge]} onValueChange={(v) => setRetirementAge(v[0])} min={currentAge + 1} max={75} />
             </div>
              <div className="space-y-2">
-                <Label htmlFor="current-balance">Current Savings Balance</Label>
+                <Label htmlFor="current-balance">Current KiwiSaver Balance</Label>
                 <Input id="current-balance" type="number" value={currentBalance} onChange={e => setCurrentBalance(Number(e.target.value))} placeholder="e.g. 50000" />
             </div>
              <div className="space-y-2">
@@ -64,7 +64,7 @@ function RetirementCalculator() {
                 <Input id="salary" type="number" value={salary} onChange={e => setSalary(Number(e.target.value))} placeholder="e.g. 75000" />
             </div>
              <div className="space-y-2">
-                <Label>Your Contribution</Label>
+                <Label>Your Contribution Rate</Label>
                  <Select value={String(contribution)} onValueChange={v => setContribution(Number(v))}>
                     <SelectTrigger><SelectValue /></SelectTrigger>
                     <SelectContent>
@@ -77,14 +77,14 @@ function RetirementCalculator() {
                 </Select>
             </div>
              <div className="space-y-2">
-                <Label>Assumed Annual Return: {fundReturn}%</Label>
+                <Label>Assumed Annual Fund Return: {fundReturn}%</Label>
                 <Slider value={[fundReturn]} onValueChange={(v) => setFundReturn(v[0])} min={1} max={12} step={0.5} />
             </div>
         </div>
         <Button onClick={calculate} className="w-full">Calculate Projection</Button>
         {result !== null && (
             <div className="pt-6 text-center">
-                <p className="text-muted-foreground">Your estimated balance at age {retirementAge}:</p>
+                <p className="text-muted-foreground">Your estimated KiwiSaver balance at age {retirementAge}:</p>
                 <p className="text-4xl font-bold font-headline text-primary">{currencyFormatter.format(result)}</p>
             </div>
         )}
@@ -93,9 +93,6 @@ function RetirementCalculator() {
   );
 }
 
-// Other calculators can be added here with similar structure.
-// For brevity, I'll just create the structure for the tabs.
-
 export default function CalculatorsPage() {
   return (
     <div>
@@ -103,7 +100,7 @@ export default function CalculatorsPage() {
             <div className="container max-w-5xl mx-auto text-center">
                 <h1 className="text-4xl md:text-5xl font-bold font-headline">Financial Calculators</h1>
                 <p className="mt-4 text-lg text-muted-foreground">
-                    Plan for your future with our easy-to-use calculators.
+                    Plan for your future with our easy-to-use KiwiSaver calculators.
                 </p>
             </div>
         </header>

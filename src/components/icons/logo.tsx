@@ -1,6 +1,6 @@
 import type { SVGProps } from "react";
 
-export function ClearPathLogo(props: SVGProps<SVGSVGElement>) {
+export function KiwiWiseLogo(props: SVGProps<SVGSVGElement>) {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -11,10 +11,10 @@ export function ClearPathLogo(props: SVGProps<SVGSVGElement>) {
     >
       <g className="font-headline" fontSize="38" fontWeight="bold">
         <text x="5" y="38" className="fill-primary">
-          Clear
+          Kiwi
         </text>
-        <text x="100" y="38" className="fill-foreground">
-          Path
+        <text x="95" y="38" className="fill-foreground">
+          Wise
         </text>
       </g>
     </svg>

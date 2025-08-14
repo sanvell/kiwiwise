@@ -10,15 +10,15 @@ import { Slider } from '@/components/ui/slider';
 import { Label } from '@/components/ui/label';
 
 const fundData = [
-  { provider: 'ANZ', name: 'Growth Fund', type: 'Growth', fees: 1.09, return1yr: 8.2, risk: 5, ethical: 'A' },
-  { provider: 'ASB', name: 'Conservative Fund', type: 'Conservative', fees: 0.65, return1yr: 4.1, risk: 2, ethical: 'B' },
-  { provider: 'Westpac', name: 'Balanced Fund', type: 'Balanced', fees: 0.98, return1yr: 6.5, risk: 4, ethical: 'C' },
-  { provider: 'Simplicity', name: 'Growth Fund', type: 'Growth', fees: 0.29, return1yr: 9.1, risk: 5, ethical: 'AA' },
-  { provider: 'Fisher Funds', name: 'Two Balanced Fund', type: 'Balanced', fees: 1.21, return1yr: 7.3, risk: 4, ethical: 'B' },
-  { provider: 'Booster', name: 'Geared Growth Fund', type: 'Aggressive', fees: 1.45, return1yr: 11.2, risk: 6, ethical: 'C' },
-  { provider: 'Generate', name: 'Focused Growth Fund', type: 'Growth', fees: 1.27, return1yr: 8.8, risk: 5, ethical: 'B' },
-  { provider: 'Milford', name: 'Aggressive Fund', type: 'Aggressive', fees: 1.15, return1yr: 10.5, risk: 6, ethical: 'A' },
-  { provider: 'Pathfinder', name: 'Global Water Fund', type: 'Growth', fees: 1.35, return1yr: 9.5, risk: 5, ethical: 'AAA' },
+  { provider: 'ANZ', name: 'KiwiSaver Growth Fund', type: 'Growth', fees: 1.09, return1yr: 8.2, risk: 5, ethical: 'A' },
+  { provider: 'ASB', name: 'KiwiSaver Conservative Fund', type: 'Conservative', fees: 0.65, return1yr: 4.1, risk: 2, ethical: 'B' },
+  { provider: 'Westpac', name: 'KiwiSaver Balanced Fund', type: 'Balanced', fees: 0.98, return1yr: 6.5, risk: 4, ethical: 'C' },
+  { provider: 'Simplicity', name: 'KiwiSaver Growth Fund', type: 'Growth', fees: 0.29, return1yr: 9.1, risk: 5, ethical: 'AA' },
+  { provider: 'Fisher Funds', name: 'KiwiSaver Two Balanced Fund', type: 'Balanced', fees: 1.21, return1yr: 7.3, risk: 4, ethical: 'B' },
+  { provider: 'Booster', name: 'KiwiSaver Geared Growth Fund', type: 'Aggressive', fees: 1.45, return1yr: 11.2, risk: 6, ethical: 'C' },
+  { provider: 'Generate', name: 'KiwiSaver Focused Growth Fund', type: 'Growth', fees: 1.27, return1yr: 8.8, risk: 5, ethical: 'B' },
+  { provider: 'Milford', name: 'KiwiSaver Aggressive Fund', type: 'Aggressive', fees: 1.15, return1yr: 10.5, risk: 6, ethical: 'A' },
+  { provider: 'Pathfinder', name: 'KiwiSaver Global Water Fund', type: 'Growth', fees: 1.35, return1yr: 9.5, risk: 5, ethical: 'AAA' },
 ];
 
 const providers = ['All', ...Array.from(new Set(fundData.map(f => f.provider)))];
@@ -44,9 +44,9 @@ export default function CompareFundsPage() {
         <div>
             <header className="bg-muted/50 py-24">
                 <div className="container max-w-5xl mx-auto text-center">
-                    <h1 className="text-4xl md:text-5xl font-bold font-headline">Compare Investment Funds</h1>
+                    <h1 className="text-4xl md:text-5xl font-bold font-headline">Compare KiwiSaver Funds</h1>
                     <p className="mt-4 text-lg text-muted-foreground">
-                        Find the best fund for your goals. Search, filter, and compare.
+                        Find the best KiwiSaver fund for your goals. Search, filter, and compare.
                     </p>
                 </div>
             </header>
@@ -105,7 +105,7 @@ export default function CompareFundsPage() {
                                 <TableHead className="text-right">Fees (%)</TableHead>
                                 <TableHead className="text-right">1yr Return (%)</TableHead>
                                 <TableHead className="text-center">Risk</TableHead>
-                                <TableHead className="text-center">Ethical</TableHead>
+                                <TableHead className="text-center">Ethical Rating</TableHead>
                             </TableRow>
                         </TableHeader>
                         <TableBody>

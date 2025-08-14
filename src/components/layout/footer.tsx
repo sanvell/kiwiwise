@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { ClearPathLogo } from '@/components/icons/logo';
+import { KiwiWiseLogo } from '@/components/icons/logo';
 import { Facebook, Twitter, Linkedin } from 'lucide-react';
 
 export function Footer() {
@@ -9,10 +9,10 @@ export function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           <div className="space-y-4">
             <Link href="/">
-              <ClearPathLogo className="h-10 w-auto" />
+              <KiwiWiseLogo className="h-10 w-auto" />
             </Link>
             <p className="text-sm text-muted-foreground">
-              Your trusted guide to making smarter financial decisions.
+              Your trusted guide to making smarter KiwiSaver decisions.
             </p>
             <div className="flex space-x-4">
               <Link href="#" className="text-muted-foreground hover:text-primary">
@@ -36,7 +36,7 @@ export function Footer() {
           <div>
             <h3 className="text-sm font-semibold text-foreground tracking-wider uppercase">Learn</h3>
             <ul className="mt-4 space-y-2">
-              <li><Link href="/guides" className="text-sm text-muted-foreground hover:text-primary">Financial Guides</Link></li>
+              <li><Link href="/guides" className="text-sm text-muted-foreground hover:text-primary">KiwiSaver Guides</Link></li>
               <li><Link href="/news" className="text-sm text-muted-foreground hover:text-primary">News & Insights</Link></li>
             </ul>
           </div>
@@ -50,7 +50,7 @@ export function Footer() {
           </div>
         </div>
         <div className="mt-8 border-t border-border pt-8 text-center">
-          <p className="text-sm text-muted-foreground">&copy; {new Date().getFullYear()} ClearPath. All rights reserved. Not financial advice.</p>
+          <p className="text-sm text-muted-foreground">&copy; {new Date().getFullYear()} KiwiWise. All rights reserved. Not financial advice.</p>
         </div>
       </div>
     </footer>
