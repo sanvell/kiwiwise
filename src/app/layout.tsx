@@ -5,8 +5,8 @@ import { Footer } from '@/components/layout/footer';
 import { Toaster } from "@/components/ui/toaster";
 
 export const metadata: Metadata = {
-  title: 'KiwiWise - Your Guide to KiwiSaver',
-  description: 'Navigate your KiwiSaver journey with confidence. Compare funds, calculate your future, and get the latest insights.',
+  title: 'ClearPath - Your Guide to Financial Freedom',
+  description: 'Navigate your financial journey with confidence. Compare funds, calculate your future, and get the latest insights.',
 };
 
 export default function RootLayout({

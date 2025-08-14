@@ -10,8 +10,8 @@ import Link from 'next/link';
 const articles = [
   {
     category: "Market Updates",
-    title: "Market Volatility: What it Means for Your KiwiSaver",
-    excerpt: "Recent global events have caused ripples in the market. We break down how this might affect your KiwiSaver balance and what you should (and shouldn't) do.",
+    title: "Market Volatility: What it Means for Your Savings",
+    excerpt: "Recent global events have caused ripples in the market. We break down how this might affect your balance and what you should (and shouldn't) do.",
     date: "October 26, 2023",
     author: "Jane Doe",
     image: "https://placehold.co/600x400.png",
@@ -19,8 +19,8 @@ const articles = [
   },
   {
     category: "Provider News",
-    title: "New Ethical Fund Launched by KiwiBank",
-    excerpt: "KiwiBank has expanded its ethical investment options. Is this new fund the right choice for you? We take a closer look at the portfolio and fees.",
+    title: "New Ethical Fund Launched by Major Bank",
+    excerpt: "A major bank has expanded its ethical investment options. Is this new fund the right choice for you? We take a closer look at the portfolio and fees.",
     date: "October 24, 2023",
     author: "John Smith",
     image: "https://placehold.co/600x400.png",
@@ -29,7 +29,7 @@ const articles = [
   {
     category: "Retirement",
     title: "Are You Saving Enough for Retirement? New Report Insights",
-    excerpt: "A recent report highlights a potential retirement savings gap for many Kiwis. Find out how you stack up and what steps you can take to boost your savings.",
+    excerpt: "A recent report highlights a potential retirement savings gap. Find out how you stack up and what steps you can take to boost your savings.",
     date: "October 20, 2023",
     author: "Emily White",
     image: "https://placehold.co/600x400.png",
@@ -47,7 +47,7 @@ const articles = [
   {
     category: "Market Updates",
     title: "Tech Stocks Rally: A Boost for Growth Funds",
-    excerpt: "A strong performance in the tech sector has provided a significant lift for growth-oriented KiwiSaver funds. What does this mean for your portfolio?",
+    excerpt: "A strong performance in the tech sector has provided a significant lift for growth-oriented funds. What does this mean for your portfolio?",
     date: "October 15, 2023",
     author: "Jane Doe",
     image: "https://placehold.co/600x400.png",
@@ -76,7 +76,7 @@ export default function NewsPage() {
         <div className="container max-w-5xl mx-auto text-center">
           <h1 className="text-4xl md:text-5xl font-bold font-headline">News & Insights</h1>
           <p className="mt-4 text-lg text-muted-foreground">
-            Stay up-to-date with the latest in the world of KiwiSaver and personal finance.
+            Stay up-to-date with the latest in the world of personal finance.
           </p>
         </div>
       </header>

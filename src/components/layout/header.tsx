@@ -1,7 +1,7 @@
 'use client';
 
 import Link from 'next/link';
-import { KiwiWiseLogo } from '@/components/icons/logo';
+import { ClearPathLogo } from '@/components/icons/logo';
 import { Button } from '@/components/ui/button';
 import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
 import { Menu, Leaf } from 'lucide-react';
@@ -26,7 +26,7 @@ export function Header() {
     <header className="sticky top-0 z-50 w-full border-b border-border/40 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
       <div className="container flex h-16 max-w-7xl items-center justify-between">
         <Link href="/" className="flex items-center gap-2">
-          <KiwiWiseLogo className="h-8 w-auto" />
+          <ClearPathLogo className="h-8 w-auto" />
         </Link>
 
         {/* Desktop Navigation */}
@@ -58,7 +58,7 @@ export function Header() {
               <div className="flex flex-col h-full">
                 <div className="flex items-center justify-start p-4 border-b">
                    <Link href="/" className="flex items-center gap-2" onClick={() => setIsOpen(false)}>
-                      <KiwiWiseLogo className="h-8 w-auto" />
+                      <ClearPathLogo className="h-8 w-auto" />
                    </Link>
                 </div>
                 <nav className="flex flex-col gap-4 p-4 flex-grow">
@@ -77,7 +77,7 @@ export function Header() {
                   ))}
                 </nav>
                  <div className="p-4 border-t mt-auto text-center text-sm text-muted-foreground">
-                  © {new Date().getFullYear()} KiwiWise
+                  © {new Date().getFullYear()} ClearPath
                 </div>
               </div>
             </SheetContent>

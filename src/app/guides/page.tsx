@@ -5,8 +5,8 @@ import Link from "next/link";
 const guides = [
   {
     icon: <BookOpen className="h-8 w-8 text-primary" />,
-    title: "KiwiSaver 101",
-    description: "New to KiwiSaver? Start here to learn the fundamentals of how it works.",
+    title: "Investing 101",
+    description: "New to investing? Start here to learn the fundamentals of how it works.",
   },
   {
     icon: <BarChart2 className="h-8 w-8 text-primary" />,
@@ -16,7 +16,7 @@ const guides = [
   {
     icon: <Home className="h-8 w-8 text-primary" />,
     title: "First Home Withdrawal",
-    description: "Learn how you can use your KiwiSaver to help buy your first home.",
+    description: "Learn how you can use your savings to help buy your first home.",
   },
   {
     icon: <UserCheck className="h-8 w-8 text-primary" />,
@@ -35,8 +35,8 @@ const guides = [
   },
   {
     icon: <Banknote className="h-8 w-8 text-primary" />,
-    title: "KiwiSaver & Tax",
-    description: "A simple breakdown of how your KiwiSaver contributions and earnings are taxed.",
+    title: "Savings & Tax",
+    description: "A simple breakdown of how your contributions and earnings are taxed.",
   },
   {
     icon: <Shuffle className="h-8 w-8 text-primary" />,
@@ -50,9 +50,9 @@ export default function GuidesPage() {
     <div className="bg-background">
        <header className="bg-muted/50 py-24">
         <div className="container max-w-5xl mx-auto text-center">
-          <h1 className="text-4xl md:text-5xl font-bold font-headline">KiwiSaver Guides</h1>
+          <h1 className="text-4xl md:text-5xl font-bold font-headline">Financial Guides</h1>
           <p className="mt-4 text-lg text-muted-foreground">
-            Your comprehensive library for mastering KiwiSaver.
+            Your comprehensive library for mastering your finances.
           </p>
         </div>
       </header>

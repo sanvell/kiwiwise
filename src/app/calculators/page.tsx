@@ -43,7 +43,7 @@ function RetirementCalculator() {
     <Card>
       <CardHeader>
         <CardTitle className="font-headline">Retirement Savings Estimator</CardTitle>
-        <CardDescription>Project your potential KiwiSaver balance at retirement.</CardDescription>
+        <CardDescription>Project your potential savings balance at retirement.</CardDescription>
       </CardHeader>
       <CardContent className="space-y-6">
          <div className="grid md:grid-cols-2 gap-6">
@@ -56,7 +56,7 @@ function RetirementCalculator() {
                 <Slider value={[retirementAge]} onValueChange={(v) => setRetirementAge(v[0])} min={currentAge + 1} max={75} />
             </div>
              <div className="space-y-2">
-                <Label htmlFor="current-balance">Current KiwiSaver Balance</Label>
+                <Label htmlFor="current-balance">Current Savings Balance</Label>
                 <Input id="current-balance" type="number" value={currentBalance} onChange={e => setCurrentBalance(Number(e.target.value))} placeholder="e.g. 50000" />
             </div>
              <div className="space-y-2">

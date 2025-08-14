@@ -44,7 +44,7 @@ export default function CompareFundsPage() {
         <div>
             <header className="bg-muted/50 py-24">
                 <div className="container max-w-5xl mx-auto text-center">
-                    <h1 className="text-4xl md:text-5xl font-bold font-headline">Compare KiwiSaver Funds</h1>
+                    <h1 className="text-4xl md:text-5xl font-bold font-headline">Compare Investment Funds</h1>
                     <p className="mt-4 text-lg text-muted-foreground">
                         Find the best fund for your goals. Search, filter, and compare.
                     </p>
