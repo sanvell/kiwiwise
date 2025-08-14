@@ -24,20 +24,22 @@ export function Header() {
 
   return (
     <header className="sticky top-0 z-50 w-full border-b border-border/40 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
-      <div className="container flex h-16 max-w-7xl items-center justify-between">
-        <Link href="/" className="flex items-center gap-2">
-          <ClearPathLogo className="h-8 w-auto" />
-        </Link>
+      <div className="container flex h-16 max-w-7xl items-center">
+        <div className="mr-4 flex">
+          <Link href="/" className="flex items-center gap-2">
+            <ClearPathLogo className="h-8 w-auto" />
+          </Link>
+        </div>
 
         {/* Desktop Navigation */}
-        <nav className="hidden md:flex gap-6">
+        <nav className="hidden md:flex items-center gap-6 text-sm flex-1">
           {navLinks.map((link) => (
             <Link
               key={link.href}
               href={link.href}
               className={cn(
-                'text-sm font-medium transition-colors hover:text-primary',
-                pathname === link.href ? 'text-primary' : 'text-muted-foreground'
+                'transition-colors hover:text-primary',
+                pathname === link.href ? 'text-primary font-medium' : 'text-muted-foreground'
               )}
             >
               {link.label}
@@ -46,7 +48,7 @@ export function Header() {
         </nav>
 
         {/* Mobile Navigation */}
-        <div className="md:hidden">
+        <div className="md:hidden ml-auto">
           <Sheet open={isOpen} onOpenChange={setIsOpen}>
             <SheetTrigger asChild>
               <Button variant="ghost" size="icon">

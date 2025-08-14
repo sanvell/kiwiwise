@@ -41,7 +41,7 @@ export default function Home() {
       <main className="flex-grow">
         {/* Hero Section */}
         <section className="relative py-20 md:py-32 bg-gradient-to-b from-background to-muted/50">
-           <div className="absolute inset-0 opacity-50 bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAzMiAzMiIgd2lkdGg9IjMyIiBoZWlnaHQ9IjMyIiBmaWxsPSJub25lIiBzdHJva2U9ImhzbCgyMDcsIDI5JSwgNTAlKSI+PHBhdGggZD0iTTAgLjUgMzIgLjVtMCAxNiAwIC41IDMyIC41TTMyIDE2LjUgMCAxNi41TTguNSA1LjV2LTEybTcgNXYtMTJtNyA1di0xMm0tMTEgMjF2LTEybTcgNXYtMTJtNyA1di0xMiIvPjwvc3ZnPg==')_repeat_0_0] [mask-image:linear-gradient(to_bottom,white_10%,transparent_70%)]"></div>
+           <div className="absolute inset-0 opacity-10 bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAzMiAzMiIgd2lkdGg9IjMyIiBoZWlnaHQ9IjMyIiBmaWxsPSJub25lIiBzdHJva2U9ImhzbCgyNDEsIDQ3JSwgNDIlKSI+PHBhdGggZD0iTTAgLjUgMzIgLjVtMCAxNiAwIC41IDMyIC41TTMyIDE2LjUgMCAxNi41TTguNSA1LjV2LTEybTcgNXYtMTJtNyA1di0xMm0tMTEgMjF2LTEybTcgNXYtMTJtNyA1di0xMiIvPjwvc3ZnPg==')_repeat_0_0] [mask-image:linear-gradient(to_bottom,white_10%,transparent_70%)]"></div>
           <div className="container max-w-7xl mx-auto px-4 z-10 relative">
             <div className="grid md:grid-cols-2 gap-12 items-center">
               <div className="space-y-6 text-center md:text-left">
