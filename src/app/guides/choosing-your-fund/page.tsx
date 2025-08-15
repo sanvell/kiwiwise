@@ -84,7 +84,7 @@ export default function ChoosingFundPage() {
             </div>
             <div className="hidden md:block">
               <Image
-                src="https://placehold.co/600x400.png"
+                src="/images/laptop.jpg"
                 alt="Person looking at charts on a laptop"
                 width={600}
                 height={400}
@@ -104,7 +104,7 @@ export default function ChoosingFundPage() {
             KiwiSaver funds aren’t one-size-fits-all. The type of fund you choose determines how your money is invested — and how much your balance might go up (or down) over time.
           </p>
            <Image
-              src="https://placehold.co/800x400.png"
+              src="/images/comp.jpg"
               alt="Chart showing different growth trajectories for conservative vs growth funds"
               width={800}
               height={400}

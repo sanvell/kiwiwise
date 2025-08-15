@@ -26,7 +26,7 @@ const guides = [
     icon: <UserCheck className="h-8 w-8 text-primary" />,
     title: "Planning for Retirement",
     description: "Discover strategies to maximize your KiwiSaver for a comfortable retirement.",
-    link: "#",
+    link: "/guides/planning-for-retirement",
   },
   {
     icon: <Leaf className="h-8 w-8 text-primary" />,
