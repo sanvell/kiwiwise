@@ -63,7 +63,7 @@ export default function Home() {
               </div>
               <div className="hidden md:block animate-fade-in-up [animation-delay:1000ms]">
                 <Image 
-                  src="https://placehold.co/600x400.png"
+                  src="/images/surf.jpg"
                   alt="Financial growth illustration"
                   width={600}
                   height={400}

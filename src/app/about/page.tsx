@@ -28,7 +28,7 @@ export default function AboutPage() {
             </div>
             <div>
                 <Image
-                    src="https://placehold.co/600x400.png"
+                    src="/images/about-us.jpg"
                     alt="KiwiWise team working together"
                     width={600}
                     height={400}
