@@ -4,7 +4,7 @@ import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from '@/components/ui/table';
-import { ArrowRight, TrendingUp, Shield, BarChart, Activity, Balance } from 'lucide-react';
+import { ArrowRight, TrendingUp, Shield, BarChart, Activity, Scale } from 'lucide-react';
 import Image from 'next/image';
 import Link from 'next/link';
 
@@ -34,7 +34,7 @@ const fundTypes = [
   },
   {
     name: 'Balanced Fund',
-    icon: <Balance className="h-8 w-8 text-primary" />,
+    icon: <Scale className="h-8 w-8 text-primary" />,
     growthAssets: '~35-63%',
     bestFor: 'Medium-term goals (3-7 years) and a moderate comfort with risk.',
     upside: 'A balance between growth and stability.',
@@ -231,3 +231,5 @@ export default function ChoosingFundPage() {
     </div>
   );
 }
+
+    
