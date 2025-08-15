@@ -27,12 +27,12 @@ export default function AboutPage() {
                 </p>
             </div>
             <div>
-                 <Image
-                    src="https://placehold.co/500x350.png"
+                <Image
+                    src="https://placehold.co/600x400.png"
                     alt="KiwiWise team working together"
-                    width={500}
-                    height={350}
-                    className="rounded-lg shadow-lg"
+                    width={600}
+                    height={400}
+                    className="rounded-lg shadow-lg w-full h-auto"
                     data-ai-hint="team collaboration"
                   />
             </div>

@@ -101,11 +101,11 @@ export default function ReviewDetailsPage() {
         <CardContent className="flex justify-center p-4">
           {/* Placeholder for the image */}
           <Image
-            src="/placeholder-review-image.jpg" // Replace with your actual image path
+            src="https://placehold.co/400x300.png"
             alt="Review Image"
-            width={400} // Adjust width as needed
-            height={300} // Adjust height as needed
-            objectFit="cover"
+            width={400} 
+            height={300}
+            data-ai-hint="review document"
             className="rounded-md"
           />
         </CardContent>
