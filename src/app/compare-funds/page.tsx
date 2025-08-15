@@ -12,6 +12,7 @@ import { Label } from '@/components/ui/label';
 import { Checkbox } from '@/components/ui/checkbox';
 import { Card, CardHeader, CardTitle, CardContent, CardDescription } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
+import { BarChart, Bar, XAxis, YAxis, Tooltip, Legend, ResponsiveContainer, CartesianGrid } from 'recharts';
 
 const fundData = [
     // Simplicity
@@ -40,6 +41,9 @@ const fundData = [
 
 const providers = ['All', ...Array.from(new Set(fundData.map(f => f.provider)))];
 const fundTypes = ['All', 'Defensive', 'Conservative', 'Balanced', 'Growth', 'Aggressive'];
+
+const chartColors = ["hsl(var(--chart-1))", "hsl(var(--chart-2))", "hsl(var(--chart-3))", "hsl(var(--chart-4))"];
+
 
 export default function CompareFundsPage() {
     const [searchTerm, setSearchTerm] = useState('');
@@ -71,6 +75,17 @@ export default function CompareFundsPage() {
     const comparisonFunds = useMemo(() => {
         return fundData.filter(fund => selectedFunds.includes(fund.id));
     }, [selectedFunds]);
+
+    const chartData = useMemo(() => {
+        const timeframes = ['1yr', '3yr', '5yr', '10yr'];
+        return timeframes.map(time => {
+            const dataPoint: {[key: string]: any} = { name: `${time} Return`};
+            comparisonFunds.forEach(fund => {
+                dataPoint[fund.name] = fund[`return${time}` as keyof typeof fund];
+            });
+            return dataPoint;
+        });
+    }, [comparisonFunds]);
 
     return (
         <div>
@@ -186,35 +201,51 @@ export default function CompareFundsPage() {
                             <h2 className="text-xl font-bold font-headline">Compare Funds ({comparisonFunds.length}/4)</h2>
                              <Button variant="ghost" size="sm" onClick={() => setSelectedFunds([])}>Clear All</Button>
                         </div>
-                        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4">
-                            {comparisonFunds.map(fund => (
-                                <Card key={fund.id} className="relative">
-                                    <Button variant="ghost" size="icon" className="absolute top-2 right-2 h-6 w-6" onClick={() => handleSelectFund(fund.id, false)}>
-                                        <X className="h-4 w-4" />
-                                    </Button>
-                                    <CardHeader>
-                                        <CardTitle className="text-base font-headline pr-8">{fund.name}</CardTitle>
-                                        <CardDescription>{fund.provider}</CardDescription>
-                                    </CardHeader>
-                                    <CardContent className="space-y-3 text-sm">
-                                        <div className="flex items-center justify-between">
-                                            <span className="text-muted-foreground flex items-center"><Shield className="mr-2 h-4 w-4" /> Risk</span>
-                                            <span className="font-medium">{fund.risk}</span>
-                                        </div>
-                                        <div className="flex items-center justify-between">
-                                            <span className="text-muted-foreground flex items-center"><Percent className="mr-2 h-4 w-4" /> Fees</span>
-                                            <span className="font-medium">{fund.fees.toFixed(2)}%</span>
-                                        </div>
-                                         <div className="flex items-center justify-between">
-                                            <span className="text-muted-foreground flex items-center"><Leaf className="mr-2 h-4 w-4" /> Ethical</span>
-                                            <Badge variant="outline">{fund.ethical}</Badge>
-                                        </div>
-                                         <div className="pt-2">
-                                            <Badge variant={fund.type === 'Growth' || fund.type === 'Aggressive' ? 'destructive' : fund.type === 'Balanced' ? 'default' : 'secondary'}>{fund.type}</Badge>
-                                        </div>
-                                    </CardContent>
-                                </Card>
-                            ))}
+                        <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
+                           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                                {comparisonFunds.map(fund => (
+                                    <Card key={fund.id} className="relative">
+                                        <Button variant="ghost" size="icon" className="absolute top-2 right-2 h-6 w-6" onClick={() => handleSelectFund(fund.id, false)}>
+                                            <X className="h-4 w-4" />
+                                        </Button>
+                                        <CardHeader>
+                                            <CardTitle className="text-base font-headline pr-8">{fund.name}</CardTitle>
+                                            <CardDescription>{fund.provider}</CardDescription>
+                                        </CardHeader>
+                                        <CardContent className="space-y-3 text-sm">
+                                            <div className="flex items-center justify-between">
+                                                <span className="text-muted-foreground flex items-center"><Shield className="mr-2 h-4 w-4" /> Risk</span>
+                                                <span className="font-medium">{fund.risk}</span>
+                                            </div>
+                                            <div className="flex items-center justify-between">
+                                                <span className="text-muted-foreground flex items-center"><Percent className="mr-2 h-4 w-4" /> Fees</span>
+                                                <span className="font-medium">{fund.fees.toFixed(2)}%</span>
+                                            </div>
+                                             <div className="flex items-center justify-between">
+                                                <span className="text-muted-foreground flex items-center"><Leaf className="mr-2 h-4 w-4" /> Ethical</span>
+                                                <Badge variant="outline">{fund.ethical}</Badge>
+                                            </div>
+                                             <div className="pt-2">
+                                                <Badge variant={fund.type === 'Growth' || fund.type === 'Aggressive' ? 'destructive' : fund.type === 'Balanced' ? 'default' : 'secondary'}>{fund.type}</Badge>
+                                            </div>
+                                        </CardContent>
+                                    </Card>
+                                ))}
+                            </div>
+                             <div className="w-full h-80 bg-card p-4 rounded-lg">
+                                <ResponsiveContainer width="100%" height="100%">
+                                    <BarChart data={chartData} margin={{ top: 20, right: 30, left: 0, bottom: 5 }}>
+                                        <CartesianGrid strokeDasharray="3 3" />
+                                        <XAxis dataKey="name" />
+                                        <YAxis label={{ value: 'Return (%)', angle: -90, position: 'insideLeft' }} />
+                                        <Tooltip />
+                                        <Legend />
+                                        {comparisonFunds.map((fund, index) => (
+                                            <Bar key={fund.id} dataKey={fund.name} fill={chartColors[index % chartColors.length]} />
+                                        ))}
+                                    </BarChart>
+                                </ResponsiveContainer>
+                            </div>
                         </div>
                     </div>
                 </div>
