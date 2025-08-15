@@ -267,18 +267,71 @@ function FeeImpactCalculator() {
 }
 
 function BalanceEstimator() {
+    const [balance, setBalance] = useState(25000);
+    const [annualContribution, setAnnualContribution] = useState(4000);
+    const [fundReturn, setFundReturn] = useState(5);
+    const [years, setYears] = useState(10);
+    const [result, setResult] = useState<{ data: any[], finalBalance: number } | null>(null);
+
+    const calculate = () => {
+        const data = [];
+        let currentBalance = balance;
+
+        for (let i = 1; i <= years; i++) {
+            currentBalance += annualContribution;
+            currentBalance *= (1 + fundReturn / 100);
+            data.push({
+                year: `Year ${i}`,
+                balance: currentBalance,
+            });
+        }
+        setResult({ data, finalBalance: currentBalance });
+    };
+
     return (
         <Card>
             <CardHeader>
                 <CardTitle className="font-headline">Future Balance Estimator</CardTitle>
                 <CardDescription>A general tool to estimate your future balance based on different scenarios.</CardDescription>
             </CardHeader>
-            <CardContent>
-                <div className="text-center py-12">
-                    <BarChart className="h-12 w-12 text-muted-foreground mx-auto mb-4" />
-                    <h3 className="font-semibold">Coming Soon!</h3>
-                    <p className="text-muted-foreground text-sm">This calculator is currently under development.</p>
+            <CardContent className="space-y-6">
+                 <div className="grid md:grid-cols-2 gap-6">
+                     <div className="space-y-2">
+                        <Label htmlFor="be-balance">Starting Balance</Label>
+                        <Input id="be-balance" type="number" value={balance} onChange={e => setBalance(Number(e.target.value))} />
+                    </div>
+                     <div className="space-y-2">
+                        <Label htmlFor="be-contribution">Annual Contribution</Label>
+                        <Input id="be-contribution" type="number" value={annualContribution} onChange={e => setAnnualContribution(Number(e.target.value))} />
+                    </div>
+                    <div className="space-y-2">
+                        <Label>Investment Period: {years} years</Label>
+                        <Slider value={[years]} onValueChange={v => setYears(v[0])} min={1} max={50} />
+                    </div>
+                    <div className="space-y-2">
+                        <Label>Assumed Annual Return: {fundReturn}%</Label>
+                        <Slider value={[fundReturn]} onValueChange={v => setFundReturn(v[0])} min={1} max={12} step={0.5} />
+                    </div>
                 </div>
+                 <Button onClick={calculate} className="w-full">Estimate Balance</Button>
+                 {result && (
+                     <div className="pt-6 text-center">
+                         <p className="text-muted-foreground">After {years} years, your estimated balance will be:</p>
+                         <p className="text-4xl font-bold font-headline text-primary">{currencyFormatter.format(result.finalBalance)}</p>
+                         <div className="w-full h-80 mt-6">
+                             <ResponsiveContainer>
+                                 <LineChart data={result.data}>
+                                     <CartesianGrid strokeDasharray="3 3" />
+                                     <XAxis dataKey="year" />
+                                     <YAxis tickFormatter={(val) => currencyFormatter.format(val as number)} />
+                                     <Tooltip formatter={(val) => currencyFormatter.format(val as number)} />
+                                     <Legend />
+                                     <Line type="monotone" dataKey="balance" name="Projected Balance" stroke="hsl(var(--chart-1))" />
+                                 </LineChart>
+                             </ResponsiveContainer>
+                         </div>
+                     </div>
+                 )}
             </CardContent>
         </Card>
     );
