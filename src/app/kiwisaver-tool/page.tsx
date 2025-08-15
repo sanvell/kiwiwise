@@ -39,7 +39,8 @@ export default function KiwisaverTool() {
           >
             <div className="w-32 h-32 rounded-full overflow-hidden mb-4">
               <Image
-                src="/images/retirement.jpg" // Replace with actual image path
+                src="https://placehold.co/128x128.png"
+                data-ai-hint="couple walking"
                 alt="Couple walking"
                 width={128}
                 height={128}
@@ -71,7 +72,8 @@ export default function KiwisaverTool() {
           >
             <div className="w-32 h-32 rounded-full overflow-hidden mb-4">
               <Image
-                src="/images/first-home.jpg" // Replace with actual image path
+                src="https://placehold.co/128x128.png"
+                data-ai-hint="modern house interior"
                 alt="Modern house interior"
                 width={128}
                 height={128}
@@ -103,7 +105,8 @@ export default function KiwisaverTool() {
           >
             <div className="w-32 h-32 rounded-full overflow-hidden mb-4">
               <Image
-                src="/images/retired.jpg" // Replace with actual image path
+                src="https://placehold.co/128x128.png"
+                data-ai-hint="older couple tablet"
                 alt="Older couple looking at tablet"
                 width={128}
                 height={128}
