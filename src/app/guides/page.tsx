@@ -20,7 +20,7 @@ const guides = [
     icon: <Home className="h-8 w-8 text-primary" />,
     title: "First Home Withdrawal",
     description: "Learn how you can use your KiwiSaver to help buy your first home.",
-    link: "#",
+    link: "/guides/first-home-withdrawal",
   },
   {
     icon: <UserCheck className="h-8 w-8 text-primary" />,
