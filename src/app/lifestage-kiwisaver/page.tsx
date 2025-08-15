@@ -19,21 +19,21 @@ const lifeStages = [
     age: '31-50',
     description: 'Optimizing savings and planning for major life events.',
     icon: <Briefcase className="h-10 w-10 text-primary" />,
-    path: '#', // TODO
+    path: '/lifestage-kiwisaver/mid-career/page-1',
   },
   {
     name: 'Pre-Retirement',
     age: '51-65',
     description: 'Preserving capital and preparing for withdrawals.',
     icon: <Building className="h-10 w-10 text-primary" />,
-    path: '#', // TODO
+    path: '/lifestage-kiwisaver/pre-retirement/page-1',
   },
   {
     name: 'Retirement',
     age: '66+',
     description: 'Managing withdrawals, income, and liquidity.',
     icon: <PersonStanding className="h-10 w-10 text-primary" />,
-    path: '#', // TODO
+    path: '/lifestage-kiwisaver/retirement/page-1',
   },
 ];
 
