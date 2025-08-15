@@ -1,7 +1,6 @@
 'use client';
 
 import { useState } from 'react';
-import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
@@ -62,7 +61,7 @@ export default function EarlyCareerPage1() {
                     </div>
                 </RadioGroup>
                 {contributing === 'yes' && (
-                    <div className="pt-2 space-y-2 animate-fade-in-up">
+                    <div className="pt-2 space-y-2 animate-in fade-in duration-300">
                         <Label>At what rate?</Label>
                          <Select name="contributionRate">
                             <SelectTrigger><SelectValue placeholder="Select rate..." /></SelectTrigger>
@@ -109,9 +108,7 @@ export default function EarlyCareerPage1() {
               </div>
 
               <div className="flex justify-between pt-4">
-                 <Link href="/lifestage-kiwisaver" passHref>
-                    <Button type="button" variant="outline">Back to Stages</Button>
-                </Link>
+                 <Button type="button" variant="outline" onClick={() => router.push('/lifestage-kiwisaver')}>Back to Stages</Button>
                 <Button type="submit">Next Step</Button>
               </div>
             </form>
