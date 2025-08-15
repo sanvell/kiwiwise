@@ -24,7 +24,7 @@ export default function KiwiSaverVsSuperPage() {
                 </header>
 
                 <Image
-                    src="https://placehold.co/800x400.png"
+                    src="/images/australia.jpg"
                     alt="Flags of New Zealand and Australia"
                     width={800}
                     height={400}

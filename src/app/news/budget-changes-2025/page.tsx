@@ -24,7 +24,7 @@ export default function BudgetChangesPage() {
                 </header>
                 
                 <Image
-                    src="https://placehold.co/800x400.png"
+                    src="/images/government.jpg"
                     alt="Parliament building"
                     width={800}
                     height={400}

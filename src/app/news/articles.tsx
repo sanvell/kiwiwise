@@ -16,7 +16,7 @@ export const articles = [
     excerpt: "The 2025 Budget has introduced several changes to KiwiSaver. Here's what you need to know and how to make the most of these adjustments.",
     date: "November 5, 2023",
     author: "Duck Bell",
-    image: "https://placehold.co/600x400.png",
+    image: "/images/government.jpg",
     imageHint: "parliament building",
     link: "/news/budget-changes-2025"
   },
@@ -26,7 +26,7 @@ export const articles = [
     excerpt: "Australia's debate over allowing superannuation funds to be used for home purchases offers valuable lessons for New Zealand's KiwiSaver scheme.",
     date: "December 1, 2023",
     author: "Duck Bell",
-    image: "https://placehold.co/600x400.png",
+    image: "/images/australia.jpg",
     imageHint: "new zealand australia flags",
     link: "/news/kiwisaver-vs-kiwisuper"
   },
