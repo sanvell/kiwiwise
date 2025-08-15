@@ -2,12 +2,43 @@
 export const articles = [
   {
     category: "Market Updates",
+    title: "Sounds Great, but Why Is My KiwiSaver Not Growing? The Inflation Trap Explained",
+    excerpt: "You’ve been contributing to your KiwiSaver for years, watching your balance grow steadily. But when you adjust for inflation, your purchasing power feels stagnant. Why?",
+    date: "November 2, 2023",
+    author: "Sarah Jones",
+    image: "https://placehold.co/600x400.png",
+    imageHint: "magnifying glass over graph",
+    link: "/news/inflation-trap"
+  },
+  {
+    category: "Government",
+    title: "KiwiSaver in 2025: Budget Changes You Need to Know (And How to Benefit)",
+    excerpt: "The 2025 Budget has introduced several changes to KiwiSaver. Here's what you need to know and how to make the most of these adjustments.",
+    date: "November 1, 2023",
+    author: "Mark Chen",
+    image: "https://placehold.co/600x400.png",
+    imageHint: "parliament building",
+    link: "/news/budget-changes-2025"
+  },
+  {
+    category: "International",
+    title: "KiwiSaver or Kiwisuper? What Australia’s Debates Teach Us About Retirement & Housing",
+    excerpt: "Australia's debate over allowing superannuation funds to be used for home purchases offers valuable lessons for New Zealand's KiwiSaver scheme.",
+    date: "October 30, 2023",
+    author: "Priya Patel",
+    image: "https://placehold.co/600x400.png",
+    imageHint: "new zealand australia flags",
+    link: "/news/kiwisaver-vs-kiwisuper"
+  },
+  {
+    category: "Market Updates",
     title: "Market Volatility: What it Means for Your KiwiSaver",
     excerpt: "Recent global events have caused ripples in the market. We break down how this might affect your balance and what you should (and shouldn't) do.",
     date: "October 26, 2023",
     author: "Jane Doe",
     image: "/images/surf.jpg",
-    imageHint: "stock market graph"
+    imageHint: "stock market graph",
+    link: "#"
   },
   {
     category: "Provider News",
@@ -16,7 +47,8 @@ export const articles = [
     date: "October 24, 2023",
     author: "John Smith",
     image: "/images/others.jpg",
-    imageHint: "bank building"
+    imageHint: "bank building",
+    link: "#"
   },
   {
     category: "Retirement",
@@ -25,7 +57,8 @@ export const articles = [
     date: "October 20, 2023",
     author: "Emily White",
     image: "/images/wellington.jpg",
-    imageHint: "happy retired couple"
+    imageHint: "happy retired couple",
+    link: "#"
   },
   {
     category: "First Home",
@@ -34,7 +67,8 @@ export const articles = [
     date: "October 18, 2023",
     author: "Michael Brown",
     image: "/images/auckland.jpg",
-    imageHint: "house with sold sign"
+    imageHint: "house with sold sign",
+    link: "#"
   },
   {
     category: "Market Updates",
@@ -43,7 +77,8 @@ export const articles = [
     date: "October 15, 2023",
     author: "Jane Doe",
     image: "/images/stocks.jpg",
-    imageHint: "glowing circuit board"
+    imageHint: "glowing circuit board",
+    link: "#"
   },
   {
     category: "Tips & Tricks",
@@ -52,6 +87,7 @@ export const articles = [
     date: "October 12, 2023",
     author: "John Smith",
     image: "/images/stocks.jpg",
-    imageHint: "growing sapling money"
+    imageHint: "growing sapling money",
+    link: "#"
   },
 ];

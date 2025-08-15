@@ -41,20 +41,20 @@ export default function NewsPage() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {filteredArticles.map(article => (
             <Card key={article.title} className="flex flex-col overflow-hidden hover:shadow-xl transition-shadow duration-300">
-              <CardHeader className="p-0">
+              <Link href={article.link || '#'} className="block h-48 w-full">
                 <Image 
                   src={article.image}
                   alt={article.title}
                   width={600}
                   height={400}
-                  className="w-full h-48 object-cover"
+                  className="w-full h-full object-cover"
                   data-ai-hint={article.imageHint}
                 />
-              </CardHeader>
+              </Link>
               <CardContent className="p-6 flex-grow">
                 <Badge variant="secondary" className="mb-2">{article.category}</Badge>
                 <CardTitle className="font-headline text-xl leading-snug">
-                  <Link href="#" className="hover:text-primary transition-colors">{article.title}</Link>
+                  <Link href={article.link || '#'} className="hover:text-primary transition-colors">{article.title}</Link>
                 </CardTitle>
                 <p className="text-muted-foreground mt-2 text-sm">{article.excerpt}</p>
               </CardContent>
