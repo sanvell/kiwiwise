@@ -20,7 +20,7 @@ export default function KiwiSaverVsSuperPage() {
                         Back to News
                     </Link>
                     <h1 className="font-headline text-3xl md:text-4xl font-bold mb-3">KiwiSaver or Kiwisuper? What Australia’s Debates Teach Us About Retirement & Housing</h1>
-                    <p className="text-muted-foreground text-sm">Published on October 30, 2023 by Priya Patel</p>
+                    <p className="text-muted-foreground text-sm">Published on October 30, 2023 by Duck Bell</p>
                 </header>
 
                 <Image

@@ -20,7 +20,7 @@ export default function BudgetChangesPage() {
                         Back to News
                     </Link>
                     <h1 className="font-headline text-3xl md:text-4xl font-bold mb-3">KiwiSaver in 2025: Budget Changes You Need to Know (And How to Benefit)</h1>
-                    <p className="text-muted-foreground text-sm">Published on November 1, 2023 by Mark Chen</p>
+                    <p className="text-muted-foreground text-sm">Published on November 1, 2023 by Duck Bell</p>
                 </header>
                 
                 <Image

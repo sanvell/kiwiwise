@@ -20,7 +20,7 @@ export default function InflationTrapPage() {
                         Back to News
                     </Link>
                     <h1 className="font-headline text-3xl md:text-4xl font-bold mb-3">Sounds Great, but Why Is My KiwiSaver Not Growing? The Inflation Trap Explained</h1>
-                    <p className="text-muted-foreground text-sm">Published on November 2, 2023 by Sarah Jones</p>
+                    <p className="text-muted-foreground text-sm">Published on November 2, 2023 by Duck Bell</p>
                 </header>
 
                  <Image
