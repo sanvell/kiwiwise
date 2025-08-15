@@ -5,33 +5,36 @@ import { Input } from '@/components/ui/input';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from '@/components/ui/table';
 import { Badge } from '@/components/ui/badge';
-import { Search } from 'lucide-react';
+import { Search, X } from 'lucide-react';
 import { Slider } from '@/components/ui/slider';
 import { Label } from '@/components/ui/label';
+import { Checkbox } from '@/components/ui/checkbox';
+import { Card, CardHeader, CardTitle, CardContent } from '@/components/ui/card';
+import { Button } from '@/components/ui/button';
 
 const fundData = [
     // Simplicity
-    { provider: 'Simplicity', name: 'KiwiSaver Defensive Fund', type: 'Defensive', fees: 0.29, return1yr: 4.1, return3yr: 3.8, return5yr: 3.9, return10yr: 4.5, risk: 1, ethical: 'AA' },
-    { provider: 'Simplicity', name: 'KiwiSaver Balanced Fund', type: 'Balanced', fees: 0.29, return1yr: 6.2, return3yr: 6.1, return5yr: 6.4, return10yr: 6.8, risk: 3, ethical: 'AA' },
-    { provider: 'Simplicity', name: 'KiwiSaver Growth Fund', type: 'Growth', fees: 0.29, return1yr: 8.3, return3yr: 8.2, return5yr: 8.5, return10yr: 8.9, risk: 5, ethical: 'AA' },
+    { id: 1, provider: 'Simplicity', name: 'KiwiSaver Defensive Fund', type: 'Defensive', fees: 0.29, return1yr: 4.1, return3yr: 3.8, return5yr: 3.9, return10yr: 4.5, risk: 1, ethical: 'AA' },
+    { id: 2, provider: 'Simplicity', name: 'KiwiSaver Balanced Fund', type: 'Balanced', fees: 0.29, return1yr: 6.2, return3yr: 6.1, return5yr: 6.4, return10yr: 6.8, risk: 3, ethical: 'AA' },
+    { id: 3, provider: 'Simplicity', name: 'KiwiSaver Growth Fund', type: 'Growth', fees: 0.29, return1yr: 8.3, return3yr: 8.2, return5yr: 8.5, return10yr: 8.9, risk: 5, ethical: 'AA' },
     // ANZ
-    { provider: 'ANZ', name: 'KiwiSaver Conservative Fund', type: 'Conservative', fees: 1.09, return1yr: 4.98, return3yr: 3.90, return5yr: 2.15, return10yr: 3.29, risk: 2, ethical: 'B' },
-    { provider: 'ANZ', name: 'KiwiSaver Balanced Fund', type: 'Balanced', fees: 1.09, return1yr: 6.71, return3yr: 5.39, return5yr: 4.62, return10yr: 5.13, risk: 4, ethical: 'B' },
-    { provider: 'ANZ', name: 'KiwiSaver Growth Fund', type: 'Growth', fees: 1.09, return1yr: 8.35, return3yr: 7.14, return5yr: 7.35, return10yr: 6.98, risk: 5, ethical: 'B' },
+    { id: 4, provider: 'ANZ', name: 'KiwiSaver Conservative Fund', type: 'Conservative', fees: 1.09, return1yr: 4.98, return3yr: 3.90, return5yr: 2.15, return10yr: 3.29, risk: 2, ethical: 'B' },
+    { id: 5, provider: 'ANZ', name: 'KiwiSaver Balanced Fund', type: 'Balanced', fees: 1.09, return1yr: 6.71, return3yr: 5.39, return5yr: 4.62, return10yr: 5.13, risk: 4, ethical: 'B' },
+    { id: 6, provider: 'ANZ', name: 'KiwiSaver Growth Fund', type: 'Growth', fees: 1.09, return1yr: 8.35, return3yr: 7.14, return5yr: 7.35, return10yr: 6.98, risk: 5, ethical: 'B' },
     // Generate
-    { provider: 'Generate', name: 'KiwiSaver Conservative Fund', type: 'Conservative', fees: 1.27, return1yr: 4.9, return3yr: 4.8, return5yr: 5.1, return10yr: 5.4, risk: 2, ethical: 'B' },
-    { provider: 'Generate', name: 'KiwiSaver Balanced Fund', type: 'Balanced', fees: 1.27, return1yr: 7.2, return3yr: 6.9, return5yr: 7.3, return10yr: 7.6, risk: 4, ethical: 'B' },
-    { provider: 'Generate', name: 'KiwiSaver Growth Fund', type: 'Growth', fees: 1.27, return1yr: 9.1, return3yr: 8.7, return5yr: 9.0, return10yr: 9.3, risk: 5, ethical: 'B' },
+    { id: 7, provider: 'Generate', name: 'KiwiSaver Conservative Fund', type: 'Conservative', fees: 1.27, return1yr: 4.9, return3yr: 4.8, return5yr: 5.1, return10yr: 5.4, risk: 2, ethical: 'B' },
+    { id: 8, provider: 'Generate', name: 'KiwiSaver Balanced Fund', type: 'Balanced', fees: 1.27, return1yr: 7.2, return3yr: 6.9, return5yr: 7.3, return10yr: 7.6, risk: 4, ethical: 'B' },
+    { id: 9, provider: 'Generate', name: 'KiwiSaver Growth Fund', type: 'Growth', fees: 1.27, return1yr: 9.1, return3yr: 8.7, return5yr: 9.0, return10yr: 9.3, risk: 5, ethical: 'B' },
     // Westpac
-    { provider: 'Westpac', name: 'KiwiSaver Conservative Fund', type: 'Conservative', fees: 0.98, return1yr: 4.5, return3yr: 3.2, return5yr: 3.5, return10yr: 4.0, risk: 2, ethical: 'C' },
-    { provider: 'Westpac', name: 'KiwiSaver Balanced Fund', type: 'Balanced', fees: 0.98, return1yr: 6.0, return3yr: 5.5, return5yr: 5.8, return10yr: 6.2, risk: 4, ethical: 'C' },
-    { provider: 'Westpac', name: 'KiwiSaver Growth Fund', type: 'Growth', fees: 0.98, return1yr: 8.0, return3yr: 7.5, return5yr: 7.8, return10yr: 8.2, risk: 5, ethical: 'C' },
+    { id: 10, provider: 'Westpac', name: 'KiwiSaver Conservative Fund', type: 'Conservative', fees: 0.98, return1yr: 4.5, return3yr: 3.2, return5yr: 3.5, return10yr: 4.0, risk: 2, ethical: 'C' },
+    { id: 11, provider: 'Westpac', name: 'KiwiSaver Balanced Fund', type: 'Balanced', fees: 0.98, return1yr: 6.0, return3yr: 5.5, return5yr: 5.8, return10yr: 6.2, risk: 4, ethical: 'C' },
+    { id: 12, provider: 'Westpac', name: 'KiwiSaver Growth Fund', type: 'Growth', fees: 0.98, return1yr: 8.0, return3yr: 7.5, return5yr: 7.8, return10yr: 8.2, risk: 5, ethical: 'C' },
     // Original Data
-    { provider: 'ASB', name: 'KiwiSaver Conservative Fund', type: 'Conservative', fees: 0.65, return1yr: 4.1, return3yr: 3.5, return5yr: 3.8, return10yr: 4.2, risk: 2, ethical: 'B' },
-    { provider: 'Fisher Funds', name: 'KiwiSaver Two Balanced Fund', type: 'Balanced', fees: 1.21, return1yr: 7.3, return3yr: 6.8, return5yr: 7.0, return10yr: 7.5, risk: 4, ethical: 'B' },
-    { provider: 'Booster', name: 'KiwiSaver Geared Growth Fund', type: 'Aggressive', fees: 1.45, return1yr: 11.2, return3yr: 10.1, return5yr: 9.8, return10yr: 10.5, risk: 6, ethical: 'C' },
-    { provider: 'Milford', name: 'KiwiSaver Aggressive Fund', type: 'Aggressive', fees: 1.15, return1yr: 10.5, return3yr: 9.5, return5yr: 9.2, return10yr: 10.1, risk: 6, ethical: 'A' },
-    { provider: 'Pathfinder', name: 'KiwiSaver Global Water Fund', type: 'Growth', fees: 1.35, return1yr: 9.5, return3yr: 8.5, return5yr: 8.8, return10yr: 9.1, risk: 5, ethical: 'AAA' },
+    { id: 13, provider: 'ASB', name: 'KiwiSaver Conservative Fund', type: 'Conservative', fees: 0.65, return1yr: 4.1, return3yr: 3.5, return5yr: 3.8, return10yr: 4.2, risk: 2, ethical: 'B' },
+    { id: 14, provider: 'Fisher Funds', name: 'KiwiSaver Two Balanced Fund', type: 'Balanced', fees: 1.21, return1yr: 7.3, return3yr: 6.8, return5yr: 7.0, return10yr: 7.5, risk: 4, ethical: 'B' },
+    { id: 15, provider: 'Booster', name: 'KiwiSaver Geared Growth Fund', type: 'Aggressive', fees: 1.45, return1yr: 11.2, return3yr: 10.1, return5yr: 9.8, return10yr: 10.5, risk: 6, ethical: 'C' },
+    { id: 16, provider: 'Milford', name: 'KiwiSaver Aggressive Fund', type: 'Aggressive', fees: 1.15, return1yr: 10.5, return3yr: 9.5, return5yr: 9.2, return10yr: 10.1, risk: 6, ethical: 'A' },
+    { id: 17, provider: 'Pathfinder', name: 'KiwiSaver Global Water Fund', type: 'Growth', fees: 1.35, return1yr: 9.5, return3yr: 8.5, return5yr: 8.8, return10yr: 9.1, risk: 5, ethical: 'AAA' },
 ];
 
 const providers = ['All', ...Array.from(new Set(fundData.map(f => f.provider)))];
@@ -42,6 +45,7 @@ export default function CompareFundsPage() {
     const [providerFilter, setProviderFilter] = useState('All');
     const [typeFilter, setTypeFilter] = useState('All');
     const [riskFilter, setRiskFilter] = useState([1, 7]);
+    const [selectedFunds, setSelectedFunds] = useState<number[]>([]);
 
     const filteredData = useMemo(() => {
         return fundData.filter(fund => {
@@ -52,6 +56,20 @@ export default function CompareFundsPage() {
             return matchesSearch && matchesProvider && matchesType && matchesRisk;
         });
     }, [searchTerm, providerFilter, typeFilter, riskFilter]);
+
+    const handleSelectFund = (fundId: number, isSelected: boolean) => {
+        if (isSelected) {
+            if (selectedFunds.length < 4) {
+                setSelectedFunds([...selectedFunds, fundId]);
+            }
+        } else {
+            setSelectedFunds(selectedFunds.filter(id => id !== fundId));
+        }
+    };
+    
+    const comparisonFunds = useMemo(() => {
+        return fundData.filter(fund => selectedFunds.includes(fund.id));
+    }, [selectedFunds]);
 
     return (
         <div>
@@ -112,6 +130,7 @@ export default function CompareFundsPage() {
                     <Table>
                         <TableHeader>
                             <TableRow>
+                                <TableHead className="w-12"></TableHead>
                                 <TableHead>Provider</TableHead>
                                 <TableHead>Fund Name</TableHead>
                                 <TableHead>Type</TableHead>
@@ -126,7 +145,14 @@ export default function CompareFundsPage() {
                         </TableHeader>
                         <TableBody>
                             {filteredData.length > 0 ? filteredData.map(fund => (
-                                <TableRow key={`${fund.provider}-${fund.name}`}>
+                                <TableRow key={fund.id}>
+                                    <TableCell>
+                                        <Checkbox 
+                                            checked={selectedFunds.includes(fund.id)}
+                                            onCheckedChange={(checked) => handleSelectFund(fund.id, !!checked)}
+                                            disabled={!selectedFunds.includes(fund.id) && selectedFunds.length >= 4}
+                                        />
+                                    </TableCell>
                                     <TableCell className="font-medium">{fund.provider}</TableCell>
                                     <TableCell>{fund.name}</TableCell>
                                     <TableCell>
@@ -144,13 +170,39 @@ export default function CompareFundsPage() {
                                 </TableRow>
                             )) : (
                                 <TableRow>
-                                    <TableCell colSpan={10} className="text-center h-24">No funds match your criteria.</TableCell>
+                                    <TableCell colSpan={11} className="text-center h-24">No funds match your criteria.</TableCell>
                                 </TableRow>
                             )}
                         </TableBody>
                     </Table>
                 </div>
             </main>
+
+            {comparisonFunds.length > 0 && (
+                <div className="fixed bottom-0 left-0 right-0 bg-background border-t-2 shadow-2xl p-4 z-50">
+                    <div className="container mx-auto">
+                        <div className="flex justify-between items-center mb-4">
+                            <h2 className="text-xl font-bold font-headline">Compare Funds ({comparisonFunds.length}/4)</h2>
+                             <Button variant="ghost" size="sm" onClick={() => setSelectedFunds([])}>Clear All</Button>
+                        </div>
+                        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4">
+                            {comparisonFunds.map(fund => (
+                                <Card key={fund.id} className="relative">
+                                    <Button variant="ghost" size="icon" className="absolute top-2 right-2 h-6 w-6" onClick={() => handleSelectFund(fund.id, false)}>
+                                        <X className="h-4 w-4" />
+                                    </Button>
+                                    <CardHeader>
+                                        <CardTitle className="text-base font-headline">{fund.name}</CardTitle>
+                                    </CardHeader>
+                                    <CardContent>
+                                        <p className="text-sm text-muted-foreground">{fund.provider}</p>
+                                    </CardContent>
+                                </Card>
+                            ))}
+                        </div>
+                    </div>
+                </div>
+            )}
         </div>
     );
 }
