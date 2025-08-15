@@ -192,10 +192,11 @@ export default function CompareFundsPage() {
                                         <X className="h-4 w-4" />
                                     </Button>
                                     <CardHeader>
-                                        <CardTitle className="text-base font-headline">{fund.name}</CardTitle>
+                                        <CardTitle className="text-base font-headline pr-8">{fund.name}</CardTitle>
                                     </CardHeader>
-                                    <CardContent>
+                                    <CardContent className="space-y-2">
                                         <p className="text-sm text-muted-foreground">{fund.provider}</p>
+                                        <Badge variant={fund.type === 'Growth' || fund.type === 'Aggressive' ? 'destructive' : fund.type === 'Balanced' ? 'default' : 'secondary'}>{fund.type}</Badge>
                                     </CardContent>
                                 </Card>
                             ))}
