@@ -1,3 +1,4 @@
+
 'use client'
 
 import { useState, useMemo } from 'react';
@@ -5,11 +6,11 @@ import { Input } from '@/components/ui/input';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from '@/components/ui/table';
 import { Badge } from '@/components/ui/badge';
-import { Search, X } from 'lucide-react';
+import { Search, X, Shield, Percent, Leaf } from 'lucide-react';
 import { Slider } from '@/components/ui/slider';
 import { Label } from '@/components/ui/label';
 import { Checkbox } from '@/components/ui/checkbox';
-import { Card, CardHeader, CardTitle, CardContent } from '@/components/ui/card';
+import { Card, CardHeader, CardTitle, CardContent, CardDescription } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 
 const fundData = [
@@ -193,10 +194,24 @@ export default function CompareFundsPage() {
                                     </Button>
                                     <CardHeader>
                                         <CardTitle className="text-base font-headline pr-8">{fund.name}</CardTitle>
+                                        <CardDescription>{fund.provider}</CardDescription>
                                     </CardHeader>
-                                    <CardContent className="space-y-2">
-                                        <p className="text-sm text-muted-foreground">{fund.provider}</p>
-                                        <Badge variant={fund.type === 'Growth' || fund.type === 'Aggressive' ? 'destructive' : fund.type === 'Balanced' ? 'default' : 'secondary'}>{fund.type}</Badge>
+                                    <CardContent className="space-y-3 text-sm">
+                                        <div className="flex items-center justify-between">
+                                            <span className="text-muted-foreground flex items-center"><Shield className="mr-2 h-4 w-4" /> Risk</span>
+                                            <span className="font-medium">{fund.risk}</span>
+                                        </div>
+                                        <div className="flex items-center justify-between">
+                                            <span className="text-muted-foreground flex items-center"><Percent className="mr-2 h-4 w-4" /> Fees</span>
+                                            <span className="font-medium">{fund.fees.toFixed(2)}%</span>
+                                        </div>
+                                         <div className="flex items-center justify-between">
+                                            <span className="text-muted-foreground flex items-center"><Leaf className="mr-2 h-4 w-4" /> Ethical</span>
+                                            <Badge variant="outline">{fund.ethical}</Badge>
+                                        </div>
+                                         <div className="pt-2">
+                                            <Badge variant={fund.type === 'Growth' || fund.type === 'Aggressive' ? 'destructive' : fund.type === 'Balanced' ? 'default' : 'secondary'}>{fund.type}</Badge>
+                                        </div>
                                     </CardContent>
                                 </Card>
                             ))}
