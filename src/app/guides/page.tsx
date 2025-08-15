@@ -1,3 +1,4 @@
+
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { BookOpen, BarChart2, Home, UserCheck, Leaf, CircleDollarSign, Banknote, Shuffle } from "lucide-react";
 import Link from "next/link";
@@ -7,41 +8,49 @@ const guides = [
     icon: <BookOpen className="h-8 w-8 text-primary" />,
     title: "KiwiSaver 101",
     description: "New to KiwiSaver? Start here to learn the fundamentals of how it works.",
+    link: "/guides/kiwisaver-101",
   },
   {
     icon: <BarChart2 className="h-8 w-8 text-primary" />,
     title: "Choosing Your Fund",
     description: "Understand the differences between defensive, conservative, balanced, growth, and aggressive funds.",
+    link: "#",
   },
   {
     icon: <Home className="h-8 w-8 text-primary" />,
     title: "First Home Withdrawal",
     description: "Learn how you can use your KiwiSaver to help buy your first home.",
+    link: "#",
   },
   {
     icon: <UserCheck className="h-8 w-8 text-primary" />,
     title: "Planning for Retirement",
     description: "Discover strategies to maximize your KiwiSaver for a comfortable retirement.",
+    link: "#",
   },
   {
     icon: <Leaf className="h-8 w-8 text-primary" />,
     title: "Ethical & Responsible Investing",
     description: "What it means to invest ethically and how to find funds that align with your values.",
+    link: "#",
   },
   {
     icon: <CircleDollarSign className="h-8 w-8 text-primary" />,
     title: "Understanding Fees",
     description: "Fees can significantly impact your returns. Learn what to look for.",
+    link: "#",
   },
   {
     icon: <Banknote className="h-8 w-8 text-primary" />,
     title: "KiwiSaver & Tax",
     description: "A simple breakdown of how your contributions and earnings are taxed.",
+    link: "#",
   },
   {
     icon: <Shuffle className="h-8 w-8 text-primary" />,
     title: "Switching Providers",
     description: "Thinking of switching? Here's what you need to know before you make a move.",
+    link: "#",
   },
 ];
 
@@ -60,7 +69,7 @@ export default function GuidesPage() {
       <main className="py-16 container max-w-7xl mx-auto">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {guides.map((guide) => (
-                <Link href="#" key={guide.title}>
+                <Link href={guide.link} key={guide.title}>
                 <Card className="h-full hover:shadow-xl transition-shadow duration-300 transform hover:-translate-y-1">
                     <CardHeader className="flex flex-row items-center gap-4">
                          <div className="bg-primary/10 rounded-full p-3 w-fit">
