@@ -1,3 +1,4 @@
+
 import Link from 'next/link';
 import { KiwiWiseLogo } from '@/components/icons/logo';
 import { Facebook, Twitter, Linkedin } from 'lucide-react';
@@ -44,7 +45,7 @@ export function Footer() {
             <h3 className="text-sm font-semibold text-foreground tracking-wider uppercase">Company</h3>
             <ul className="mt-4 space-y-2">
               <li><Link href="/about" className="text-sm text-muted-foreground hover:text-primary">About Us</Link></li>
-              <li><Link href="#" className="text-sm text-muted-foreground hover:text-primary">Contact</Link></li>
+              <li><Link href="/contact" className="text-sm text-muted-foreground hover:text-primary">Contact</Link></li>
               <li><Link href="#" className="text-sm text-muted-foreground hover:text-primary">Privacy Policy</Link></li>
             </ul>
           </div>
