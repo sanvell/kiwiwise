@@ -14,7 +14,7 @@ const guides = [
     icon: <BarChart2 className="h-8 w-8 text-primary" />,
     title: "Choosing Your Fund",
     description: "Understand the differences between defensive, conservative, balanced, growth, and aggressive funds.",
-    link: "#",
+    link: "/guides/choosing-your-fund",
   },
   {
     icon: <Home className="h-8 w-8 text-primary" />,
